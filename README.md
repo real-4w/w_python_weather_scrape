@@ -3,5 +3,5 @@ based on https://www.geeksforgeeks.org/how-to-extract-weather-data-from-google-i
 Scrape the weather from google.com
 
 WIP:
-    
+    Want to het the precipation, humidity and win as well.
 
