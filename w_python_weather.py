@@ -16,8 +16,6 @@ session.headers['Accept-Language'] = LANGUAGE
 session.headers['Content-Language'] = LANGUAGE
 
 # getting raw data
-#html = requests.get(url).content
-#soup = BeautifulSoup(html, 'html.parser')
 html = session.get(url).content
 soup = soup = BeautifulSoup(html, 'html.parser')
 
@@ -40,24 +38,3 @@ result['humidity'] = soup.find("span", attrs={"id": "wob_hm"}).text
 result['wind'] = soup.find("span", attrs={"id": "wob_ws"}).text
 
 print(result)
-
-# get the temperature
-#temp = soup.find('div', attrs={'class': 'BNeawe iBp4i AP7Wnd'}).text
-# this contains time and sky description
-#str = soup.find('div', attrs={'class': 'BNeawe tAd8D AP7Wnd'}).text
-# format the data
-#data = str.split('\n')
-#time = data[0]
-#sky = data[1]
-# list having all div tags having particular clas sname
-#listdiv = soup.findAll('div', attrs={'class': 'BNeawe s3v9rd AP7Wnd'})
-# particular list with required data
-#strd = listdiv[5].text
-# formatting the string
-#pos = strd.find('Wind')
-#other_data = strd[pos:]
-# printing all the data
-#print("Temperature is", temp)
-#print("Time: ", time)
-#print("Sky Description: ", sky)
-#print(other_data)
