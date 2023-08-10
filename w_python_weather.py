@@ -1,6 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 
+#https://stackoverflow.com/questions/50422136/python-requests-with-wincertstore/57053415#57053415
+
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36"
 LANGUAGE = "en-US,en;q=0.5"
 
@@ -16,7 +18,7 @@ session.headers['Accept-Language'] = LANGUAGE
 session.headers['Content-Language'] = LANGUAGE
 
 # getting raw data
-html = session.get(url).content
+html = session.get(url, verify=False).content
 soup = soup = BeautifulSoup(html, 'html.parser')
 
 # store all results on this dictionary
