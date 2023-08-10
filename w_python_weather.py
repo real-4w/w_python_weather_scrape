@@ -18,7 +18,7 @@ session.headers['Accept-Language'] = LANGUAGE
 session.headers['Content-Language'] = LANGUAGE
 
 # getting raw data
-html = session.get(url, verify=False).content
+html = session.get(url, verify=True).content
 soup = soup = BeautifulSoup(html, 'html.parser')
 
 # store all results on this dictionary
